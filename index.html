@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawDay | Less Admin. More Wagging Tails.</title>
+<meta name="description" content="PawDay is a proposed affordable dog care management system for small independent businesses in Ireland.">
+<style>
+:root{
+ --green:#185b43;
+ --dark:#193c30;
+ --cream:#faf8ef;
+ --mint:#def0e2;
+ --orange:#f8d4ad;
+ --pink:#fae0e6;
+ --muted:#50675b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ background:var(--cream);
+ color:var(--dark);
+ font-family:system-ui,-apple-system,Arial,sans-serif;
+ line-height:1.6;
+}
+a{color:inherit}
+header{
+ background:#fff;
+ border-bottom:1px solid #e5e8df;
+ position:sticky;
+ top:0;
+ z-index:10;
+}
+.nav{
+ max-width:1150px;
+ margin:auto;
+ padding:15px 20px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:12px;
+}
+.logo{
+ font-size:25px;
+ font-weight:900;
+ letter-spacing:-1px;
+ text-decoration:none;
+ color:var(--green);
+}
+.navlinks{display:flex;gap:18px;align-items:center}
+.navlinks a{text-decoration:none;font-weight:700;font-size:14px}
+.container{max-width:1150px;margin:auto;padding:0 20px}
+.hero{
+ background:linear-gradient(135deg,#e3f1e4 0%,#fff5e6 65%,#fce1db 100%);
+ padding:80px 0;
+}
+.hero-grid{
+ display:grid;
+ grid-template-columns:1.2fr 1fr;
+ gap:45px;
+ align-items:center;
+}
+.eyebrow{
+ color:var(--green);
+ font-size:12px;
+ font-weight:900;
+ letter-spacing:2px;
+ text-transform:uppercase;
+}
+h1{
+ font-size:clamp(38px,6vw,70px);
+ line-height:1.07;
+ letter-spacing:-2px;
+ margin:18px 0;
+}
+h2{
+ font-size:clamp(28px,4vw,42px);
+ line-height:1.15;
+ letter-spacing:-1px;
+ margin:10px 0 20px;
+}
+h3{margin:10px 0;font-size:20px}
+p{color:var(--muted)}
+.lead{font-size:19px;max-width:600px}
+.btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ border:2px solid transparent;
+ padding:15px 23px;
+ border-radius:13px;
+ font:inherit;
+ font-weight:800;
+ text-decoration:none;
+ cursor:pointer;
+ min-height:52px;
+}
+.primary{background:var(--green);color:#fff}
+.primary:hover{background:#103e2e}
+.outline{
+ border-color:var(--green);
+ background:#fff;
+ color:var(--green);
+}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.mockup{
+ background:#fff;
+ padding:23px;
+ border-radius:25px;
+ box-shadow:0 20px 55px #1c4f3425;
+ transform:rotate(1deg);
+}
+.mockhead{
+ background:var(--mint);
+ padding:15px;
+ border-radius:15px;
+ font-weight:900;
+ margin-bottom:13px;
+}
+.mockrow{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:15px;
+ margin:10px 0;
+ border-radius:13px;
+ background:#f7f8f3;
+ gap:12px;
+}
+.tag{
+ padding:5px 10px;
+ border-radius:20px;
+ background:#d5efdb;
+ color:#215b38;
+ font-size:12px;
+ font-weight:800;
+ white-space:nowrap;
+}
+.warning{background:#ffe7b2;color:#765000}
+.blocked{background:#ffdada;color:#962323}
+section{padding:75px 0}
+.center{text-align:center;max-width:730px;margin:0 auto 35px}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:20px;
+}
+.card{
+ background:#fff;
+ border:1px solid #e5e9e1;
+ border-radius:23px;
+ padding:28px;
+ box-shadow:0 5px 15px #24533a0b;
+}
+.emoji{font-size:35px}
+.problem{background:#fff}
+.problem .card:nth-child(1){background:#fce8df}
+.problem .card:nth-child(2){background:#f2e8fa}
+.problem .card:nth-child(3){background:#e3f3e6}
+.steps{background:var(--cream)}
+.stepno{
+ display:inline-grid;
+ place-items:center;
+ width:43px;
+ height:43px;
+ background:var(--green);
+ color:white;
+ border-radius:50%;
+ font-weight:900;
+}
+.callout{
+ background:var(--green);
+ color:white;
+ padding:50px 25px;
+ border-radius:25px;
+ text-align:center;
+ margin-top:35px;
+}
+.callout h2,.callout p{color:white}
+.pricing{background:#e6f2e6}
+.pricecard{
+ max-width:570px;
+ margin:auto;
+ text-align:center;
+ background:white;
+ padding:42px 25px;
+ border:2px solid var(--green);
+ border-radius:25px;
+ box-shadow:0 13px 35px #235b4015;
+}
+.price{
+ font-size:55px;
+ font-weight:900;
+ color:var(--green);
+ line-height:1.2;
+}
+.price small{font-size:18px}
+.setup{
+ background:var(--orange);
+ padding:12px;
+ border-radius:12px;
+ display:inline-block;
+ font-weight:800;
+ margin:18px 0;
+}
+.note{font-size:13px;color:#5b6c61}
+.waiting{background:var(--cream)}
+.formbox{
+ max-width:630px;
+ margin:auto;
+ padding:35px;
+ border-radius:25px;
+ background:#fff;
+ border:1px solid #d9e7d9;
+}
+input{
+ width:100%;
+ padding:15px;
+ margin:8px 0 18px;
+ border:2px solid #a5bdad;
+ border-radius:12px;
+ font:inherit;
+}
+label{font-weight:800}
+.formbox button{width:100%}
+#thankyou{
+ display:none;
+ background:var(--mint);
+ color:var(--dark);
+ padding:20px;
+ border-radius:15px;
+ margin-top:15px;
+ text-align:center;
+ font-weight:800;
+}
+footer{
+ background:#163d2f;
+ color:white;
+ padding:40px 20px;
+ text-align:center;
+}
+footer p{color:#d5e5db}
+footer a{color:white;font-weight:800}
+footer a:focus-visible,.btn:focus-visible,button:focus-visible{
+ outline:3px solid #f0a53c;
+ outline-offset:3px;
+}
+@media(max-width:760px){
+ .hero{padding:55px 0}
+ .hero-grid{grid-template-columns:1fr}
+ .mockup{transform:none}
+ .grid{grid-template-columns:1fr}
+ .navlinks a:not(.btn){display:none}
+ .navlinks .btn{padding:10px 13px;min-height:44px}
+ section{padding:50px 0}
+ .formbox{padding:22px}
+ .price{font-size:45px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#">🐾 PawDay</a>
+  <div class="navlinks">
+   <a href="#benefits">Benefits</a>
+   <a href="#how">How it works</a>
+   <a href="#pricing">Pricing</a>
+   <a class="btn primary" href="#waiting">Join waiting list</a>
+  </div>
+ </div>
+</header>
+
+<main>
+
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">Made for independent dog care businesses in Ireland</div>
+   <h1>Less admin.<br>More wagging tails. 🐶</h1>
+   <p class="lead">
+    Keep bookings, vaccination checks and dog updates
+    organised in one simple place, so your staff
+    can spend more time caring for dogs.
+   </p>
+   <div class="buttons">
+    <a class="btn primary"
+      href="https://lisamarialudlow-cpu.github.io/waggy-tails-demo/"
+      target="_blank" rel="noopener">
+      🐾 Try the demo →
+    </a>
+    <a class="btn outline" href="#waiting">Join the waiting list</a>
+   </div>
+   <p class="note">Explore a working fictional demo. No account required.</p>
+  </div>
+
+  <div class="mockup" aria-label="Illustrative product feature overview">
+   <div class="mockhead">🐾 Your doggy daycare at a glance</div>
+   <div class="mockrow">
+    <span>📅 Daily bookings</span>
+    <span class="tag">Capacity checks</span>
+   </div>
+   <div class="mockrow">
+    <span>💉 Vaccination dates</span>
+    <span class="tag warning">Expiry alerts</span>
+   </div>
+   <div class="mockrow">
+    <span>🐕 Check-ins</span>
+    <span class="tag blocked">Expired blocked</span>
+   </div>
+   <div class="mockrow">
+    <span>💌 Doggy Pupdates</span>
+    <span class="tag">Activity notes</span>
+   </div>
+   <p class="note">Illustrative summary of the alpha's features.</p>
+  </div>
+ </div>
+</section>
+
+<section id="benefits" class="problem">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">The everyday problem</div>
+   <h2>Running a dog care business shouldn't mean chasing paperwork.</h2>
+   <p>Sound familiar? These are invented examples of the
+   problems small dog care businesses may face.</p>
+  </div>
+  <div class="grid">
+   <article class="card">
+    <div class="emoji">📱</div>
+    <h3>Bookings everywhere</h3>
+    <p>"Our bookings are coming through messages, texts and
+    different conversations. It's hard to keep track."</p>
+   </article>
+   <article class="card">
+    <div class="emoji">💉</div>
+    <h3>Vaccination paperwork</h3>
+    <p>"We need an easier way to know when a dog's
+    vaccination is about to expire."</p>
+   </article>
+   <article class="card">
+    <div class="emoji">💬</div>
+    <h3>Constant owner updates</h3>
+    <p>"We're busy looking after the dogs, but owners
+    still want to know what they're doing."</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="how" class="steps">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">Simple from the start</div>
+   <h2>How PawDay works</h2>
+   <p>Three simple parts working together to keep your
+   day organised.</p>
+  </div>
+  <div class="grid">
+   <article class="card">
+    <span class="stepno">1</span>
+    <div class="emoji">📅</div>
+    <h3>Organise bookings</h3>
+    <p>See the week's available places, prevent
+    overbooking and find another date when a day is full.</p>
+   </article>
+   <article class="card">
+    <span class="stepno">2</span>
+    <div class="emoji">🐕</div>
+    <h3>Check and care</h3>
+    <p>See vaccination warnings, prevent check-in for
+    expired vaccinations and record activities with one tap.</p>
+   </article>
+   <article class="card">
+    <span class="stepno">3</span>
+    <div class="emoji">💌</div>
+    <h3>Share Pupdates</h3>
+    <p>Let an owner view their own dog's check-in
+    status and daily activities using demo details.</p>
+   </article>
+  </div>
+
+  <div class="callout">
+   <h2>See the idea in action 🐾</h2>
+   <p>Try the working Waggy Tails example with fictional dog records.</p>
+   <a class="btn outline"
+      href="https://lisamarialudlow-cpu.github.io/waggy-tails-demo/"
+      target="_blank" rel="noopener">
+      Open the live demo →
+   </a>
+  </div>
+ </div>
+</section>
+
+<section id="pricing" class="pricing">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">Affordable by design</div>
+   <h2>Simple proposed pricing</h2>
+   <p>Designed with small independent Irish dog care
+   businesses in mind.</p>
+  </div>
+  <div class="pricecard">
+   <div class="emoji">🐾</div>
+   <h3>PawDay Starter</h3>
+   <div class="price">€20 <small>/ month</small></div>
+   <div class="setup">€60 one-time setup fee</div>
+   <p>Proposed subscription model for a future
+   commercial version.</p>
+   <p>Bookings · Vaccination checks · Dog activity updates</p>
+   <a class="btn primary" href="#waiting">Register your interest →</a>
+   <p class="note">
+    Pricing is an assumption for this student project.
+    PawDay is not currently offered as a paid service.
+   </p>
+  </div>
+ </div>
+</section>
+
+<section id="waiting" class="waiting">
+ <div class="container">
+  <div class="center">
+   <div class="eyebrow">Interested in PawDay?</div>
+   <h2>Join our demonstration waiting list 🐶</h2>
+   <p>See how a future waiting-list registration
+   could work.</p>
+  </div>
+  <div class="formbox">
+   <form id="waitForm">
+    <label for="business">Business name</label>
+    <input id="business" type="text"
+      placeholder="Your dog care business" required>
+
+    <label for="email">Email address</label>
+    <input id="email" type="email"
+      placeholder="you@example.ie" required>
+
+    <button class="btn primary" type="submit">
+     🐾 Join the waiting list
+    </button>
+   </form>
+
+   <div id="thankyou" role="status" aria-live="polite">
+    🐶 Thank you for your interest in PawDay!
+    This was a demonstration only.
+    No information has been submitted or saved.
+   </div>
+
+   <p class="note">
+    Demonstration only: this form does not collect,
+    transmit, store or register your details.
+    Please do not enter real personal information.
+   </p>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <h3>🐾 PawDay</h3>
+ <p>Less admin. More wagging tails.</p>
+ <p>A fictional software concept for independent
+ dog care businesses in Ireland.</p>
+ <p><a href="notes.html">Behind the Build →</a></p>
+ <p class="note" style="color:#d5e5db">
+  NCI Technology for Business · Student prototype
+ </p>
+</footer>
+
+<script>
+// Demonstration-only form.
+// Prevents the browser from submitting any data.
+// Does not store information locally or remotely.
+document.getElementById("waitForm")
+ .addEventListener("submit",function(event){
+   event.preventDefault();
+   if(!this.reportValidity()) return;
+   this.reset();
+   this.style.display="none";
+   document.getElementById("thankyou")
+     .style.display="block";
+ });
+</script>
+
+</body>
+</html>
