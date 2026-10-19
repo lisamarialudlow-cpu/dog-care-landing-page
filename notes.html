@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CA2 Notes | Waggy Tails and PawDay</title>
+<style>
+:root{--ink:#202e29;--green:#185b43;--paper:#f7f8f5;--line:#dbe4dd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{background:#e8f1eb;border-bottom:1px solid var(--line);padding:28px 18px;text-align:center}
+header a{color:var(--green);font-weight:700}
+main{max-width:880px;margin:20px auto 55px;padding:0 16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;margin:18px 0}
+h1{font-size:clamp(25px,4vw,36px);line-height:1.25;margin:0 0 20px}
+h2{font-size:25px;color:var(--green);border-bottom:2px solid var(--line);padding-bottom:8px;margin:0 0 20px}
+h3{font-size:20px;margin:25px 0 8px}
+h4{font-size:16px;margin:16px 0 6px}
+p{margin:9px 0 15px;overflow-wrap:anywhere}
+a{color:#165e4b;overflow-wrap:anywhere}
+blockquote{margin:15px 0;padding:15px 20px;background:#f2f6f3;border-left:4px solid var(--green)}
+.item{margin-left:14px}
+footer{text-align:center;padding:24px;color:#4c6158}
+footer a{color:var(--green)}
+@media(max-width:600px){
+.card{padding:18px}
+h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html">← Back to PawDay landing page</a>
+</header>
+
+<main>
+
+<section class="card">
+<h1>CA2 – Technology for Business</h1>
+<p>Case H: Waggy Tails Dog Daycare
+Dog daycare, Lucan, Co. Dublin</p>
+</section>
+
+<section class="card">
+<h2>Task 1 – Business Research and Planning</h2>
+
+<h3>Initial Hunch</h3>
+<p>To organise everything properly and to save time.</p>
+<p>Who would pay for this?
+Most pet care businesses.</p>
+
+<h3>Chosen Business Market</h3>
+<p>Business Chosen: Small independent dog care businesses in Ireland.</p>
+<p>Buyer: The owner of the dog care business.</p>
+<p>Users: The owner and staff who manage the dogs, bookings and daily activities.</p>
+
+<h3>Customer Problem (Invented)</h3>
+<blockquote>"We spend too much time organising our bookings and answering messages from dog owners. We need one simple system to keep track of everything and save time."</blockquote>
+
+<h3>Type of Technology</h3>
+<p>An online booking platform and dog daycare management system.</p>
+
+<h4>How businesses currently manage this:</h4>
+<p>Small dog care businesses may use WhatsApp, text messages, paper diaries and manual vaccination records to manage bookings and communicate with dog owners.</p>
+
+<h4>Proposed Improvement:</h4>
+<p>One central system to manage bookings, check vaccination dates and provide daily updates to dog owners.</p>
+
+<h3>Existing Software Products in Ireland</h3>
+
+<h4>1. The Kennel Manager</h4>
+<p>Irish kennel management software that helps dog care businesses manage bookings, pet records and reminders.</p>
+<p><strong>Website:</strong>
+<a href="https://thekennelmanager.com/" target="_blank" rel="noopener noreferrer">https://thekennelmanager.com/</a></p>
+<p>Date checked: 19 October 2026</p>
+
+<h4>2. Groomsy</h4>
+<p>Dog grooming software built in Dublin that helps small businesses manage appointments, customer records and payments.</p>
+<p><strong>Website:</strong>
+<a href="https://groomsy.io/" target="_blank" rel="noopener noreferrer">https://groomsy.io/</a></p>
+<p>Date checked: 19 October 2026</p>
+
+<h3>Business Model (Assumption)</h3>
+<p>Setup Fee: €60</p>
+<p>Monthly Subscription: €20</p>
+<p>I chose a budget-friendly price because of the current economic climate. Small independent dog care businesses may not have a lot of money to spend on software, so I wanted to keep it affordable while helping them save time and stay organised.</p>
+
+<h3>Lean PRD</h3>
+<p class="item">1. Business Opportunity (Hypothesis): As dog ownership continues to create demand for pet care services, small independent dog care businesses in Ireland may benefit from affordable management software that improves efficiency, reduces administrative work and keeps daily operations organised.</p>
+<p class="item">2. Target Audience: Owners and managers of small independent dog care businesses throughout Ireland.</p>
+<p class="item">3. Call to Action: Encourage potential customers to register their interest by joining a waiting list for the software.</p>
+<p class="item">4. Measure of Success: Evaluate customer interest by monitoring waiting-list button clicks and demonstration form submissions. This is a proposed measure for a future version, as the current demonstration does not collect or track submissions.</p>
+<p class="item">5. Features Not Included (Out of Scope): The initial version will not include online payment processing, automated WhatsApp messaging or integration with external booking platforms.</p>
+</section>
+
+<section class="card">
+<h2>Task 2 – Working Prototype</h2>
+
+<p>Business: Waggy Tails Dog Daycare</p>
+<p><strong>Prototype Link:</strong>
+<a href="https://lisamarialudlow-cpu.github.io/waggy-tails-demo/" target="_blank" rel="noopener noreferrer">https://lisamarialudlow-cpu.github.io/waggy-tails-demo/</a></p>
+
+<h3>Alpha Test</h3>
+<p>I tested my prototype on both my laptop and phone to make sure the system was working correctly.</p>
+
+<h4>Booking System:</h4>
+<p>I tested booking a dog on Friday, 23 October, when all 40 places were full. The system correctly refused the booking and suggested Thursday, 22 October, instead. I tried to double-book a dog, but the system did not allow it.</p>
+
+<h4>Vaccination Checks:</h4>
+<p>I checked the colour-coded vaccination warnings. Valid vaccinations appeared green, vaccinations close to expiry appeared amber, and expired vaccinations appeared red. Luna's check-in was blocked because her vaccination had expired.</p>
+
+<h4>Dog Activities and Pupdate:</h4>
+<p>I checked Milo into daycare and recorded that he had played. I then entered his name and owner code (PAW102) into Pupdate, where his activity and the time were displayed.</p>
+<p>I refreshed the website and confirmed the information was still saved. I also entered an incorrect owner code (PAW999), and Milo's information was not displayed.</p>
+
+<h4>Mobile Testing:</h4>
+<p>I tested the website on my phone and found it straightforward to use. The buttons were easy to press, the layout was clear, and the information was easy to read.</p>
+
+<h4>Problem Identified and Improvement Made:</h4>
+<p>During testing, I thought the original colours looked too plain and did not stand out enough, especially on a mobile phone, which has a smaller screen and needs to be easy to read.</p>
+<p>I used ChatGPT to suggest some CSS colours, then chose the colours I preferred and updated the website on GitHub.</p>
+
+<h4>Overall Result:</h4>
+<p>The features I tested worked as expected. I was happy that the booking checks, vaccination warnings and Pupdate system all worked correctly. The final design was straightforward to use on both my laptop and mobile phone.</p>
+<p>The prototype uses fictional sample data stored in the browser. The Pupdate owner-code feature demonstrates how information can be filtered for an individual dog, but it is not a secure customer login system.</p>
+</section>
+
+<section class="card">
+<h2>Task 3 – PawDay Landing Page</h2>
+<p>Product Name: PawDay</p>
+<p>Target Market: Small independent dog care businesses in Ireland.</p>
+<p><strong>Landing Page:</strong>
+<a href="https://lisamarialudlow-cpu.github.io/dog-care-landing-page/" target="_blank" rel="noopener noreferrer">https://lisamarialudlow-cpu.github.io/dog-care-landing-page/</a></p>
+
+<h3>Purpose of the Landing Page</h3>
+<p>The landing page promotes a generic version of the Waggy Tails management system to small independent dog care businesses in Ireland.</p>
+<p>It explains the problems the software aims to solve, how it works in three steps, and the proposed pricing of €60 setup and €20 per month.</p>
+<p>The page includes a Try the Demo button linking to the Waggy Tails prototype and a demonstration waiting-list form that shows a thank-you message without collecting or sending information.</p>
+
+<h3>AI Use and Development</h3>
+<p>I used ChatGPT to assist with developing the HTML, CSS and JavaScript for the prototype and landing page.</p>
+<p>I provided instructions on the business problem, target customers, features, pricing and website design. I tested the prototype myself and used ChatGPT to help make changes to the website colours.</p>
+
+<h4>My Landing Page Development Prompt:</h4>
+<p>I want you to behave like a professional website designer and developer. Build me a modern, professional and dog-friendly landing page for a new software product aimed at small independent dog care businesses in Ireland.</p>
+<p>The business problem is that employees in small dog care businesses spend too much time managing bookings, checking vaccination records and answering messages from dog owners. I want to offer affordable software that helps them stay organised, reduce paperwork and save time.</p>
+<p>Create a catchy and memorable product name suitable for the Irish market. The software should help businesses manage daily bookings, keep track of vaccination expiry dates and provide updates to dog owners.</p>
+<p>I want a modern, colourful and professional website that is friendly and welcoming. Use dog-related icons, clear headings, attractive colours and large buttons. Make sure it works properly on mobile phones.</p>
+<p>Explain the product in three simple steps:</p>
+<p>Manage daily bookings and available spaces.</p>
+<p>Check vaccination records and record dog activities.</p>
+<p>Allow dog owners to see updates about their own pets.</p>
+<p>Include my proposed pricing of €60 as a one-time setup fee and €20 as a monthly subscription. Clearly label these as proposed prices.</p>
+<p>The webpage must include a strong headline, the problems faced by small dog care businesses, a three-step explanation, a pricing section, a Try the Demo button linking to my Waggy Tails prototype, a demonstration waiting-list form and a footer link called Behind the Build that opens notes.html.</p>
+<p>The landing page must advertise a generic software product rather than Waggy Tails itself.</p>
+<p>Do not create customer reviews or testimonials. Make sure every advertised feature is available in the prototype or clearly labelled as planned.</p>
+<p>Build everything in one index.html file using HTML, CSS and JavaScript so I can publish it through GitHub Pages.</p>
+<p>Keep the design professional, easy to navigate and suitable for Irish small businesses.</p>
+
+</section>
+</main>
+
+<footer>
+Technology for Business · CA2 ·
+<a href="index.html">Back to landing page</a>
+</footer>
+
+</body>
+</html>
